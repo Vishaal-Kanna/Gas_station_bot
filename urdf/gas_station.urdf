@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="gas_station">
+
+  <joint name="gas_base" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin
+        xyz="0.5 1 0"
+        rpy="0 0 -1.57" />
+  </joint>	
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.33623522871174 0.177469849603709 -0.157088210766902"
+        rpy="0 0 0" />
+      <mass
+        value="14.7299030053972" />
+      <inertia
+        ixx="0.84809476085918"
+        ixy="2.16358479686617E-16"
+        ixz="-3.12340431296576E-17"
+        iyy="0.570458410670287"
+        iyz="1.41812677336259E-16"
+        izz="1.17714382335918" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="can">
+    <inertial>
+      <origin
+        xyz="-2.91321358858454E-05 0.507858212214229 -0.254124949054085"
+        rpy="0 0 0" />
+      <mass
+        value="205.80876150373" />
+      <inertia
+        ixx="21.0224297483758"
+        ixy="0.00149417840441406"
+        ixz="0.00131477697143659"
+        iyy="6.63675201340054"
+        iyz="0.00640851591178053"
+        izz="21.027784542719" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/can.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/can.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="fixed">
+    <origin
+      xyz="0.68423 0.49036 0"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="can" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="can_cap">
+    <inertial>
+      <origin
+        xyz="-0.000190569433694776 0.0861865712247863 0.000116843388021537"
+        rpy="0 0 0" />
+      <mass
+        value="0.0355823783414013" />
+      <inertia
+        ixx="9.7828437401394E-05"
+        ixy="-8.40260160941324E-08"
+        ixz="-4.90965484752551E-10"
+        iyy="3.05802645774461E-05"
+        iyz="-3.67434137816846E-07"
+        izz="9.78264027528471E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/can_cap.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/can_cap.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0.052002 0.75692 -0.1143"
+      rpy="1.5708 0 0" />
+    <parent
+      link="can" />
+    <child
+      link="can_cap" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

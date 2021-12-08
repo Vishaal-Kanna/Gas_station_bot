@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="robot_arm">
+
+  <link name="world" />
+
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="-2.40249256666454E-17 2.31372309668347E-18 0.0377872136537855"
+        rpy="0 0 0" />
+      <mass
+        value="61.2942137276504" />
+      <inertia
+        ixx="4.43601929007034"
+        ixy="1.36432140292152E-34"
+        ixz="-1.98607621195975E-17"
+        iyy="4.43601929007034"
+        iyz="2.63017918691454E-16"
+        izz="8.73156973973922" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint
+    name="dummy_joint" type="fixed">
+    <parent 
+    link="world" />
+    <child
+    link="link1" />
+  </joint> 
+
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="-4.35215650781507E-08 0.078485141091096 1.11026771309439E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.737268633073559" />
+      <inertia
+        ixx="0.00902499302769591"
+        ixy="8.68553880492339E-10"
+        ixz="2.22317991155093E-10"
+        iyy="0.00744275967559365"
+        iyz="-3.346207450723E-09"
+        izz="0.0076515703348216" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.085"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="1.5669967572918E-05 -0.304040443554538 1.26439609733212E-05"
+        rpy="0 0 0" />
+      <mass
+        value="1.50038625923708" />
+      <inertia
+        ixx="0.052319481834011"
+        ixy="1.64531036881196E-06"
+        ixz="9.33503082022147E-07"
+        iyy="0.00431963419819591"
+        iyz="3.6487518522938E-06"
+        izz="0.0530164409141027" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta2"
+    type="revolute">
+    <origin
+      xyz="0 0.175 0"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="link4">
+    <inertial>
+      <origin
+        xyz="-4.51747276560345E-08 0.0850017270786476 1.09208076331341E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.580635526432428" />
+      <inertia
+        ixx="0.00558115890727697"
+        ixy="2.44052950747551E-10"
+        ixz="1.8653224324632E-10"
+        iyy="0.00457338067351513"
+        iyz="-1.10378996232253E-09"
+        izz="0.00420773867787236" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link4.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta3"
+    type="revolute">
+    <origin
+      xyz="0 -0.45 0"
+      rpy="0 -1.5707963267949 3.14" />
+    <parent
+      link="link3" />
+    <child
+      link="link4" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="link5">
+    <inertial>
+      <origin
+        xyz="-1.0078455658839E-05 -0.285046767851249 -6.67426817258954E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.809676366607652" />
+      <inertia
+        ixx="0.0419576894032026"
+        ixy="6.40817094606129E-07"
+        ixz="-2.35798103181255E-07"
+        iyy="0.00403574866352981"
+        iyz="2.26766392675903E-07"
+        izz="0.0434071334875582" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link5.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link5.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta4"
+    type="revolute">
+    <origin
+      xyz="0 0.15 0"
+      rpy="0 -1.5707963267949 0" />
+    <parent
+      link="link4" />
+    <child
+      link="link5" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="link6">
+    <inertial>
+      <origin
+        xyz="-2.35443707453134E-17 -0.0183941969382351 7.71464384058771E-07"
+        rpy="0 0 0" />
+      <mass
+        value="0.245546177121655" />
+      <inertia
+        ixx="0.000607734736200731"
+        ixy="3.46591932546715E-19"
+        ixz="-7.81851278918393E-09"
+        iyy="0.00189409564096144"
+        iyz="-8.28876725575695E-09"
+        izz="0.00197254885181598" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link6.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/link6.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta5"
+    type="revolute">
+    <origin
+      xyz="0 -0.55 0"
+      rpy="0 0 0" />
+    <parent
+      link="link5" />
+    <child
+      link="link6" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="50"
+      velocity="100" />
+  </joint>
+  <link
+    name="gripper_base">
+    <inertial>
+      <origin
+        xyz="3.96543347935535E-15 0.0562270701372454 -2.40815807774708E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0716560481058097" />
+      <inertia
+        ixx="8.58079461912336E-05"
+        ixy="1.25446010309657E-20"
+        ixz="-4.51808632086734E-21"
+        iyy="0.000116159886704529"
+        iyz="4.72349251842634E-08"
+        izz="0.000188878643374606" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/gripper_base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/gripper_base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="theta6"
+    type="revolute">
+    <origin
+      xyz="0 -0.0600000000000001 0"
+      rpy="0 -1.5707963267949 3.14" />
+    <parent
+      link="link6" />
+    <child
+      link="gripper_base" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="6.28"
+      effort="30"
+      velocity="1" />
+  </joint>
+  <link
+    name="finger1">
+    <inertial>
+      <origin
+        xyz="0.00330693559222194 0.0055384610597653 -3.99171079640944E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00565212855241566" />
+      <inertia
+        ixx="1.39106127614759E-06"
+        ixy="6.83676597168532E-08"
+        ixz="1.60958074122774E-23"
+        iyy="3.3065635572341E-07"
+        iyz="-6.36335466077704E-23"
+        izz="1.44950431895636E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/finger1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/finger1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="grasp_angle1"
+    type="revolute">
+    <origin
+      xyz="-0.0449999999999998 0.105 0"
+      rpy="3.14159265358979 0 3.14159265358979" />
+    <parent
+      link="gripper_base" />
+    <child
+      link="finger1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.6"
+      effort="30"
+      velocity="1" />
+  </joint>
+  <link
+    name="finger2">
+    <inertial>
+      <origin
+        xyz="0.00330693559222193 0.0055384610597653 4.30339663826916E-17"
+        rpy="0 0 0" />
+      <mass
+        value="0.00565212855241566" />
+      <inertia
+        ixx="1.39106127614759E-06"
+        ixy="6.83676597168533E-08"
+        ixz="-1.93560521554188E-24"
+        iyy="3.30656355723409E-07"
+        iyz="2.90684300456426E-23"
+        izz="1.44950431895636E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/finger2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://robot_arm/meshes/finger2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="grasp_angle2"
+    type="revolute">
+    <origin
+      xyz="0.045 0.105 0"
+      rpy="0 0 0" />
+    <parent
+      link="gripper_base" />
+    <child
+      link="finger2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.6"
+      effort="30"
+      velocity="1" />
+  </joint>
+
+<transmission name="theta1_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta1">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor1">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="theta2_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta2">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor2">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="theta3_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta3">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor3">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="theta4_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta4">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor4">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="theta5_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta5">
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor5">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="theta6_trans">
+  <type>SimpleTransmission</type>
+  <joint name="theta6">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor6">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="grasp_angle1_trans">
+  <type>SimpleTransmission</type>
+  <joint name="grasp_angle1">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor7">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+<transmission name="grasp_angle2_trans">
+  <type>SimpleTransmission</type>
+  <joint name="grasp_angle2">
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </joint>
+  <actuator name="steer_motor8">
+    <mechanicalReduction>1</mechanicalReduction>
+    <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+  </actuator>
+</transmission>
+
+
+</robot>

@@ -1,0 +1,83 @@
+# Robot name goes here
+robot_arm:
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 10
+
+  # Controller 1
+  theta1_controller:
+    type: position_controllers/JointPositionController  
+    joint: theta1   
+
+    
+  theta2_controller:
+    type: position_controllers/JointPositionController  
+    joint: theta2   
+
+  theta3_controller:
+    type: position_controllers/JointPositionController  
+    joint: theta3   
+
+  theta4_controller:
+    type: position_controllers/JointPositionController  
+    joint: theta4   
+
+  theta5_controller:
+    type: position_controllers/JointPositionController  
+    joint: theta5   
+
+  theta6_controller:
+    type: effort_controllers/JointEffortController  
+    joint: theta6   
+
+  grasp_angle1_controller:
+    type: effort_controllers/JointEffortController  
+    joint: grasp_angle1   
+    
+  grasp_angle2_controller:
+    type: effort_controllers/JointEffortController  
+    joint: grasp_angle2   
+
+  gazebo_ros_control:   
+   pid_gains:
+    theta1:
+      p: 100.0
+      i: 0.1 
+      d: 5.0
+      
+    theta2:
+      p: 100.0
+      i: 0.1 
+      d: 5.0
+      
+    theta3:
+      p: 100.0
+      i: 0.1 
+      d: 5.0
+      
+    theta4:
+      p: 100.0
+      i: 0.1 
+      d: 5.0
+
+    theta5:
+      p: 100.0
+      i: 0.1
+      d: 5.0
+
+    theta6:
+      p: 100.0
+      i: 0.1 
+      d: 5.0
+
+    grasp_angle1:
+      p: 8.0
+      i: 1 
+      d: 0.1
+
+    grasp_angle2:
+      p: 8.0
+      i: 1 
+      d: 0.1
+ 
